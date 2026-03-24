@@ -1,6 +1,6 @@
+import pandas as pd
 import mlflow
 import mlflow.sklearn
-from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -8,7 +8,9 @@ import os
 
 mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI"))
 
-X, y = load_iris(return_X_y=True)
+df = pd.read_csv("data/iris.csv")
+X = df.drop("target", axis=1)
+y = df["target"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
