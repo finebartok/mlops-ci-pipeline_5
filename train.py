@@ -10,7 +10,7 @@ import mlflow.sklearn
 import dagshub
 
 # Initialize DAGsHub if environment variables are present
-if os.environ.get("MLFLOW_TRACKING_USERNAME") and os.environ.get("MLFLOW_TRACKING_PASSWORD"):
+if os.environ.get("DAGSHUB_USER_TOKEN") or (os.environ.get("MLFLOW_TRACKING_USERNAME") and os.environ.get("MLFLOW_TRACKING_PASSWORD")):
     dagshub.init(repo_owner='finebartok', repo_name='mlops-ci-pipeline_5', mlflow=True)
 else:
     mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI"))

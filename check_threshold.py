@@ -5,7 +5,10 @@ import sys
 import dagshub
 
 # Initialize DAGsHub MLflow tracking
-dagshub.init(repo_owner='finebartok', repo_name='mlops-ci-pipeline_5', mlflow=True)
+if os.environ.get("DAGSHUB_USER_TOKEN"):
+    dagshub.init(repo_owner='finebartok', repo_name='mlops-ci-pipeline_5', mlflow=True)
+else:
+    mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI"))
 
 # Read Run ID
 with open("model_info.txt", "r") as f:
