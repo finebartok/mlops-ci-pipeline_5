@@ -20,7 +20,7 @@ accuracy = run.data.metrics["accuracy"]
 print(f"Run ID: {run_id}")
 print(f"Accuracy: {accuracy}")
 
-if accuracy < 0.85:
+if accuracy < 1:
     print("❌ Accuracy below threshold. Failing pipeline.")
     sys.exit(1)
 else:
