@@ -1,0 +1,7 @@
+mlruns/
+mlflow.db
+.dvc/config.local
+model_info.txt
+data/iris.csv
+*.pyc
+__pycache__/

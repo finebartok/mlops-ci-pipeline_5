@@ -1,6 +1,5 @@
 [core]
     autostage = true
-['remote "origin"']
-    url = https://dagshub.com/finebartok/mlops-ci-pipeline_5.dvc
-[core]
     remote = origin
+[remote "origin"]
+    url = https://dagshub.com/finebartok/mlops-ci-pipeline_5.dvc
