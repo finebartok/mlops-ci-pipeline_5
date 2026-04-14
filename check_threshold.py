@@ -24,4 +24,4 @@ if accuracy < .8:
     print("Accuracy below threshold. Failing pipeline.")
     sys.exit(1)
 else:
-    print("Accuracy meets threshold.")
+    print("Accuracy meets threshold..")
